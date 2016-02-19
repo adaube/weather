@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Adam's Weather App</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-1.12.0.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.js"></script>
+</head>
+<body>
+<!--
+  <ul class="nav nav-tabs">
+    <li role="presentation" class="active"><a href="#">Home</a></li>
+    <li role="presentation"><a href="#">Profile</a></li>
+    <li role="presentation"><a href="#">Messages</a></li>
+  </ul> -->
+<!--
+  <div class="container">
+    <div class="row">
+      <div class="form-group">
+        <label>Latitude:</label>
+        <input type="text" class='form-control' id='latitude' name='latitude'>
+      </div>
+      <div class="form-group">
+        <label>Longitude:</label>
+        <input type="text" class="form-control" id="longitude" name="longtiude">
+      </div>
+      <button class="btn btn-default" id='get-weather'>Get Weather</button>
+    </div>
+    <hr>
+    <div class="row">
+      <pre id="output">
+
+      </pre>
+    </div>
+    <div id="test-output"></div>
+  </div> -->
+  <!-- <script id="entry-template" type="text/x-handlebars-template">
+    <div class="entry">
+      <h1>{{title}}</h1>
+      <div class="body">
+        {{body}}
+      </div>
+    </div>
+  </script> -->
+  <div class="site-wrapper">
+     <div class="site-wrapper-inner">
+       <div class="cover-container">
+         <div class="masthead clearfix">
+           <div class="inner">
+             <h3 class="masthead-brand">Weather.</h3>
+             <nav>
+               <ul class="nav masthead-nav">
+                 <li class="active"><a href="#">Home</a></li>
+                 <li><a href="#">About</a></li>
+                 <li><a href="#">Time Zones</a></li>
+                 <li><a href="#">Contact</a></li>
+               </ul>
+             </nav>
+           </div>
+         </div>
+
+         <div class="inner cover">
+           <h1 class="cover-heading">Weather.</h1>
+           <p class="lead">The site is under construction.</p>
+           <p class="lead">
+             <a href="#" class="btn btn-lg btn-default">Click to refresh</a>
+           </p>
+         </div>
+          <br
+         <div class="mastfoot">
+
+           <div class="inner">
+             <p>Share the weather:</p>
+             <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
+             <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+             <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
+           </div>
+
+         </div>
+
+       </div>
+
+     </div>
+
+   </div>
+
+    <div class="jumbotron">
+      <h1>{{title}}</h1>
+      <p>{{description}}</p>
+      <p><a class="btn btn-primary btn-lg" href="{{btnLink}}" role="button">{{btnText}}</a></p>
+    </div>
+  </script>
+
+  <script id="general-weather" type="text/x-handlebars-template">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-4">
+            {{summary}}
+          </div>
+            <img src="{{ iconImg }}.jpg" class="col-md-1 col-md-offset-8 img-responsive">
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4">
+            <h3>{{ latitude }}</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-md-offset-8">
+            <h3>{{ longitude }}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </script>
+
+  <script id="info" type="text/x-hanlebars-template">
+    <div class="row">
+      <h3>Position: ({{latitude}}, {{longitude}})</h3>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-2">
+        <img src="images/{{icon}}.jpg" alt="{{icon}}" class="img-responsive">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-md-offset-4">
+        <h5>{{time}}</h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <p><em>{{ summary }}</em></p>
+      </div>
+    </div>
+  </script>
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script><script id="jumbo-template" type='text/x-handlebars-template'>
+  <!-- Handlebars!!! -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // var source = $('#jumbo-template').html();
+    // var template = Handlebars.compile(source);
+    // var data = {
+    //   title: "My New Post",
+    //   description: "This is my first post!",
+    //   btnText: 'Click',
+    //   btnLink: 'http://www.lingscars.com'
+    // };
+    // var html = template(data);
+    // $("#test-output").html(html);
+
+    $('#test').on('click', testTheTemplate);
+
+    function testTheTemplate(){
+      var source = $('#general-weather').html();
+
+      var template = Handlebars.compile(source);
+
+      var data = {
+        latitude: 100,
+        longitude: 100,
+        summary: 'This is summary!',
+        iconImg: 'http://cdn1-www.cattime.com/assets/uploads/gallery/25-cat-memes/Cat-meme_024.jpg'
+      };
+      var html = template(data);
+      $("#test-output").html(html);
+    }
+  </script>
+</body>
+</html>
