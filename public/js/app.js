@@ -3,12 +3,10 @@ var weatherData = {};
 $(document).ready(function(){
   var baseUrl = 'https://api.forecast.io/forecast/';
   var name = "Your Name";
-  // $('#get-weather').on('click', getWeather);
   $('#get-weather').on('click', showInfo);
 
 
   function buildUrl(lat, lon){
-    // return "https://api.forecast.io/forecast/099641b3c36867977fb67a197504e301/37.8267,-122.423"
     return baseUrl + apiKey+'/'+lat+','+lon;
   }
 
