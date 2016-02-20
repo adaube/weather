@@ -24,7 +24,7 @@
       <div class="col-md-2 center">
         <div class="form-group">
           <label>Location:</label>
-          <input type="text" class="form-control" id="location" name="stringGoogle">
+          <input type="text" class="form-control" id="location" name="location">
         </div>
         <div class="row">
           <button class="btn btn-default" id='get-weather'>Get Weather</button>
@@ -47,7 +47,7 @@
       </div>
     </div>
   </script>
-  <script>
+  <!-- <script>
   <div class="site-wrapper">
      <div class="site-wrapper-inner">
        <div class="cover-container">
@@ -95,14 +95,14 @@
       <p>{{description}}</p>
       <p><a class="btn btn-primary btn-lg" href="{{btnLink}}" role="button">{{btnText}}</a></p>
     </div>
-  </script>
-
+  </script> -->
+<!--
   <script id="general-weather" type="text/x-handlebars-template">
     <div class="row">
       <div class="col-md-12">
         <div class="row">
           <div class="col-md-4">
-            {{summary}}
+            {{temperature}}
           </div>
             <img src="{{ iconImg }}.jpg" class="col-md-1 col-md-offset-8 img-responsive">
         </div>
@@ -118,16 +118,16 @@
         </div>
       </div>
     </div>
-  </script>
+  </script> -->
 
   <script id="info" type="text/x-hanlebars-template">
     <div class="row">
-      <h3>Where You Are: ({{latitude}}, {{longitude}})</h3>
+      <h3>Temp: {{temperature}} degrees F</h3>
     </div>
     <div class="row">
-      <div class="col-md-6 col-md-offset-2">
-        <img src="images/{{icon}}.jpg" alt="{{icon}}" class="img-responsive">
-      </div>
+      // <div class="col-md-6 col-md-offset-2">
+      //   <img src="images/{{icon}}.jpg" alt="{{icon}}" class="img-responsive">
+      // </div>
     </div>
     <div class="row">
       <div class="col-md-3 col-md-offset-4">
