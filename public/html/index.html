@@ -4,29 +4,32 @@
   <meta charset="UTF-8">
   <title>Adam's Weather App</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://code.jquery.com/jquery-1.12.0.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.js"></script>
+  <script src="css/main.css"></script>
 </head>
 <body>
-<!--
-  <ul class="nav nav-tabs">
+
+  <!-- <ul class="nav nav-tabs">
     <li role="presentation" class="active"><a href="#">Home</a></li>
     <li role="presentation"><a href="#">Profile</a></li>
     <li role="presentation"><a href="#">Messages</a></li>
-  </ul> -->
-<!--
+  </ul>
+ -->
+
+<!-- Future ideas:
+-Implement bootstrap tooltip for form, form label, button. -->
+
   <div class="container">
-    <div class="row">
-      <div class="form-group">
-        <label>Latitude:</label>
-        <input type="text" class='form-control' id='latitude' name='latitude'>
+    <div class="col-md-12 center">
+      <div class="col-md-2 center">
+        <div class="form-group">
+          <label>Location:</label>
+          <input type="text" class="form-control" id="location" name="stringGoogle">
+        </div>
+        <div class="row">
+          <button class="btn btn-default" id='get-weather'>Get Weather</button>
+        </div>
       </div>
-      <div class="form-group">
-        <label>Longitude:</label>
-        <input type="text" class="form-control" id="longitude" name="longtiude">
-      </div>
-      <button class="btn btn-default" id='get-weather'>Get Weather</button>
     </div>
     <hr>
     <div class="row">
@@ -35,15 +38,16 @@
       </pre>
     </div>
     <div id="test-output"></div>
-  </div> -->
-  <!-- <script id="entry-template" type="text/x-handlebars-template">
+  </div>
+ <script id="entry-template" type="text/x-handlebars-template">
     <div class="entry">
       <h1>{{title}}</h1>
       <div class="body">
         {{body}}
       </div>
     </div>
-  </script> -->
+  </script>
+  <script>
   <div class="site-wrapper">
      <div class="site-wrapper-inner">
        <div class="cover-container">
@@ -68,7 +72,7 @@
              <a href="#" class="btn btn-lg btn-default">Click to refresh</a>
            </p>
          </div>
-          <br
+          <br>
          <div class="mastfoot">
 
            <div class="inner">
@@ -118,7 +122,7 @@
 
   <script id="info" type="text/x-hanlebars-template">
     <div class="row">
-      <h3>Position: ({{latitude}}, {{longitude}})</h3>
+      <h3>Where You Are: ({{latitude}}, {{longitude}})</h3>
     </div>
     <div class="row">
       <div class="col-md-6 col-md-offset-2">
@@ -142,36 +146,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script><script id="jumbo-template" type='text/x-handlebars-template'>
   <!-- Handlebars!!! -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+
   <script src="js/config.js"></script>
   <script src="js/app.js"></script>
-  <script>
-    // var source = $('#jumbo-template').html();
-    // var template = Handlebars.compile(source);
-    // var data = {
-    //   title: "My New Post",
-    //   description: "This is my first post!",
-    //   btnText: 'Click',
-    //   btnLink: 'http://www.lingscars.com'
-    // };
-    // var html = template(data);
-    // $("#test-output").html(html);
 
-    $('#test').on('click', testTheTemplate);
-
-    function testTheTemplate(){
-      var source = $('#general-weather').html();
-
-      var template = Handlebars.compile(source);
-
-      var data = {
-        latitude: 100,
-        longitude: 100,
-        summary: 'This is summary!',
-        iconImg: 'http://cdn1-www.cattime.com/assets/uploads/gallery/25-cat-memes/Cat-meme_024.jpg'
-      };
-      var html = template(data);
-      $("#test-output").html(html);
-    }
-  </script>
 </body>
 </html>
