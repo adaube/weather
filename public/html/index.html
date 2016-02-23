@@ -47,7 +47,7 @@
       </div>
     </div>
   </script>
-  <!-- <script>
+  <script>
   <div class="site-wrapper">
      <div class="site-wrapper-inner">
        <div class="cover-container">
@@ -95,39 +95,17 @@
       <p>{{description}}</p>
       <p><a class="btn btn-primary btn-lg" href="{{btnLink}}" role="button">{{btnText}}</a></p>
     </div>
-  </script> -->
-<!--
-  <script id="general-weather" type="text/x-handlebars-template">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="row">
-          <div class="col-md-4">
-            {{temperature}}
-          </div>
-            <img src="{{ iconImg }}.jpg" class="col-md-1 col-md-offset-8 img-responsive">
-        </div>
-        <div class="row">
-          <div class="col-md-4 col-md-offset-4">
-            <h3>{{ latitude }}</h3>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 col-md-offset-8">
-            <h3>{{ longitude }}</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-  </script> -->
+  </script>
 
   <script id="info" type="text/x-hanlebars-template">
+  <div class="jumbotron">
     <div class="row">
-      <h3>Temp: {{temperature}} degrees F</h3>
+      <h3>Temp: {{temperature}} degrees</h3>
     </div>
     <div class="row">
-      // <div class="col-md-6 col-md-offset-2">
-      //   <img src="images/{{icon}}.jpg" alt="{{icon}}" class="img-responsive">
-      // </div>
+      <div class="col-md-6 col-md-offset-2">
+        <img src="images/{{icon}}.jpg" alt="{{icon}}" class="img-responsive">
+      </div>
     </div>
     <div class="row">
       <div class="col-md-3 col-md-offset-4">
@@ -139,11 +117,13 @@
         <p><em>{{ summary }}</em></p>
       </div>
     </div>
+  </div>
   </script>
+
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script><script id="jumbo-template" type='text/x-handlebars-template'>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <!-- Handlebars!!! -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
 
