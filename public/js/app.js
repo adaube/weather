@@ -1,29 +1,33 @@
-var weatherData = {};
-var googleData = {};
+// var weatherData = {};
+// var googleData = {};
 
 $(document).ready(function(){
   var baseUrl = 'https://api.forecast.io/forecast/';
   var locationUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
-  $('#get-weather').on('click', showInfo);
+  $('#get-weather').on('click', google);
 
   function googleUrl(location){
     return locationUrl + location;
+    console.log(this);
   };
 
-  function google(location){
-    var location = $('#location').text();
+  function google(){
+    var location = $('#location').val();
+    console.log(location);
     var jsonGoogle = {
       url: googleUrl(location),
       success: googleSuccess,
       error: errorHandler
     };
+    $.ajax(jsonGoogle);
+    console.log(location);
+  };
 
   function googleSuccess(google){
     console.log(google);
-    var googleData = {
-      lat: google.results[0].geometry.location.lat,
-      lon: google.results[0].geometry.location.lng,
-    };
+    var lat = google.results[0].geometry.location.lat;
+    var lon = google.results[0].geometry.location.lng;
+    showInfo(lat, lon);
   };
 
   function buildUrl(lat, lon){
@@ -40,9 +44,9 @@ $(document).ready(function(){
   function errorHandler(error){
     console.log(error);
   };
-  function showInfo(){
-    var lat = googleSuccess(lat);
-    var lon = googleSuccess(lon);
+  function showInfo(lat, lon){
+    //var lat = googleSuccess(lat);
+    //var lon = googleSuccess(lon);
     var ajaxOptions = {
       url: buildUrl(lat,lon),
       dataType: 'jsonp',
