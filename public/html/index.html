@@ -2,35 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="Adam Daube" content="Weather Website">
+  <link rel="icon" href="images/favicon.ico">
+
   <title>Adam's Weather App</title>
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.js"></script>
-  <script src="css/main.css"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.js">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/animate.min.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
-  <!-- <ul class="nav nav-tabs">
+  <ul class="nav nav-tabs">
     <li role="presentation" class="active"><a href="#">Home</a></li>
     <li role="presentation"><a href="#">Profile</a></li>
     <li role="presentation"><a href="#">Messages</a></li>
   </ul>
- -->
+
 
 <!-- Future ideas:
 -Implement bootstrap tooltip for form, form label, button. -->
 
-  <div class="container">
+  <div class="jumbotron container">
     <div class="col-md-12 center">
-      <div class="col-md-2 center">
         <div class="form-group">
-          <label>Location:</label>
-          <input type="text" class="form-control" id="location" name="location">
+          <label>Adam's Weather App</label>
+          <input type="text" class="form-control" id="location" name="location" placeholder="Input the location you want to find weather for.  Zip code, city name, etc.">
         </div>
         <div class="row">
-          <button class="btn btn-default" id='get-weather'>Get Weather</button>
+          <button class="btn btn-default" id='get-weather'>Get the Weather!</button>
         </div>
-      </div>
     </div>
+    <br>
     <hr>
     <div class="row">
       <pre id="output">
@@ -39,15 +45,10 @@
     </div>
     <div id="test-output"></div>
   </div>
- <script id="entry-template" type="text/x-handlebars-template">
-    <div class="entry">
-      <h1>{{title}}</h1>
-      <div class="body">
-        {{body}}
-      </div>
-    </div>
+
   </script>
-  <script>
+
+  <script id="info" type="text/x-hanlebars-template">
   <div class="site-wrapper">
      <div class="site-wrapper-inner">
        <div class="cover-container">
@@ -64,13 +65,17 @@
              </nav>
            </div>
          </div>
+         <div class="animated bounceInDown inner cover">
+         <h1>{{title}}</h1>
+         <p>{{description}}</p>
+         <p><a class="btn btn-primary btn-lg" href="{{ btnLink }}" role="button">{{ btnText }}</a></p>
 
-         <div class="inner cover">
-           <h1 class="cover-heading">Weather.</h1>
+           <h1 class="cover-heading">Temperature: {{ temperature }} °F</h1>
            <p class="lead">The site is under construction.</p>
-           <p class="lead">
-             <a href="#" class="btn btn-lg btn-default">Click to refresh</a>
-           </p>
+           <p class="lead"><em>{{ summary }}</em></p>
+           <h5>{{ time }}</h5>
+           <img src="images/{{icon}}.jpg" alt="{{icon}}" class="img-responsive">
+
          </div>
           <br>
          <div class="mastfoot">
@@ -89,35 +94,6 @@
      </div>
 
    </div>
-
-    <div class="jumbotron">
-      <h1>{{title}}</h1>
-      <p>{{description}}</p>
-      <p><a class="btn btn-primary btn-lg" href="{{btnLink}}" role="button">{{btnText}}</a></p>
-    </div>
-  </script>
-
-  <script id="info" type="text/x-hanlebars-template">
-  <div class="jumbotron">
-    <div class="row">
-      <h3>Temp: {{temperature}} degrees</h3>
-    </div>
-    <div class="row">
-      <div class="col-md-6 col-md-offset-2">
-        <img src="images/{{icon}}.jpg" alt="{{icon}}" class="img-responsive">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-3 col-md-offset-4">
-        <h5>{{time}}</h5>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <p><em>{{ summary }}</em></p>
-      </div>
-    </div>
-  </div>
   </script>
 
   <!-- jQuery -->
