@@ -16,61 +16,161 @@
 </head>
 <body>
 
-  <ul class="nav nav-tabs">
+  <!-- <ul class="nav nav-tabs">
     <li role="presentation" class="active"><a href="#">Home</a></li>
     <li role="presentation"><a href="#">Profile</a></li>
     <li role="presentation"><a href="#">Messages</a></li>
-  </ul>
+  </ul> -->
 
 
 <!-- Future ideas:
 -Implement bootstrap tooltip for form, form label, button. -->
-
-  <div class="jumbotron container">
-    <div class="col-md-12 center">
-        <div class="form-group">
+<div class="hero" data-bg-image="../images/nyc.jpg">
+  <div class="container">
+    <div class="col-md-12">
+        <div class="col-md-6 col-md-offset-3 form-group">
           <label>Adam's Weather App</label>
-          <input type="text" class="form-control" id="location" name="location" placeholder="Input the location you want to find weather for.  Zip code, city name, etc.">
-        </div>
-        <div class="row">
-          <button class="btn btn-default" id='get-weather'>Get the Weather!</button>
+          <form>
+            <input type="text" class="form-control" id="location" name="location" placeholder="Input the location you want to find weather for.  Zip code, city name, etc.">
+          </form>
+            <button class="btn btn-default" id='get-weather'>Get the Weather!</button>
         </div>
     </div>
+  </div>
+</div>
+
     <br>
     <hr>
-    <div class="row">
-      <pre id="output">
 
-      </pre>
-    </div>
-    <div id="test-output"></div>
-  </div>
+      <div id="test-output">
+
+      </div>
 
   </script>
+
+  <!-- <nav>
+    <ul class="nav masthead-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Time Zones</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+ -->
+
+ <!-- <div class="inner">
+   <h3 class="masthead-brand">Weather.</h3>
+ </div> -->
+
 
   <script id="info" type="text/x-hanlebars-template">
   <div class="site-wrapper">
      <div class="site-wrapper-inner">
        <div class="cover-container">
          <div class="masthead clearfix">
-           <div class="inner">
-             <h3 class="masthead-brand">Weather.</h3>
-             <nav>
-               <ul class="nav masthead-nav">
-                 <li class="active"><a href="#">Home</a></li>
-                 <li><a href="#">About</a></li>
-                 <li><a href="#">Time Zones</a></li>
-                 <li><a href="#">Contact</a></li>
-               </ul>
-             </nav>
-           </div>
          </div>
          <div class="animated bounceInDown inner cover">
+         <div class="forecast-table">
+   				<div class="container">
+   					<div class="forecast-container">
+   						<div class="today forecast">
+   							<div class="forecast-header">
+   								<div class="day">Monday</div>
+   								<div class="date">6 Oct</div>
+   							</div> <!-- .forecast-header -->
+   							<div class="forecast-content">
+   								<div class="location">New York</div>
+   								<div class="degree">
+   									<div class="num">23<sup>o</sup>C</div>
+   									<div class="forecast-icon">
+   										<img src="images/icons/icon-1.svg" alt="" width=90>
+   									</div>
+   								</div>
+   								<span><img src="images/icon-umberella.png" alt="">20%</span>
+   								<span><img src="images/icon-wind.png" alt="">18km/h</span>
+   								<span><img src="images/icon-compass.png" alt="">East</span>
+   							</div>
+   						</div>
+   						<div class="forecast">
+   							<div class="forecast-header">
+   								<div class="day">Tuesday</div>
+   							</div> <!-- .forecast-header -->
+   							<div class="forecast-content">
+   								<div class="forecast-icon">
+   									<img src="images/icons/icon-3.svg" alt="" width=48>
+   								</div>
+   								<div class="degree">23<sup>o</sup>C</div>
+   								<small>18<sup>o</sup></small>
+   							</div>
+   						</div>
+   						<div class="forecast">
+   							<div class="forecast-header">
+   								<div class="day">Wednesday</div>
+   							</div> <!-- .forecast-header -->
+   							<div class="forecast-content">
+   								<div class="forecast-icon">
+   									<img src="images/icons/icon-5.svg" alt="" width=48>
+   								</div>
+   								<div class="degree">23<sup>o</sup>C</div>
+   								<small>18<sup>o</sup></small>
+   							</div>
+   						</div>
+   						<div class="forecast">
+   							<div class="forecast-header">
+   								<div class="day">Thursday</div>
+   							</div> <!-- .forecast-header -->
+   							<div class="forecast-content">
+   								<div class="forecast-icon">
+   									<img src="images/icons/icon-7.svg" alt="" width=48>
+   								</div>
+   								<div class="degree">23<sup>o</sup>C</div>
+   								<small>18<sup>o</sup></small>
+   							</div>
+   						</div>
+   						<div class="forecast">
+   							<div class="forecast-header">
+   								<div class="day">Friday</div>
+   							</div> <!-- .forecast-header -->
+   							<div class="forecast-content">
+   								<div class="forecast-icon">
+   									<img src="images/icons/icon-12.svg" alt="" width=48>
+   								</div>
+   								<div class="degree">23<sup>o</sup>C</div>
+   								<small>18<sup>o</sup></small>
+   							</div>
+   						</div>
+   						<div class="forecast">
+   							<div class="forecast-header">
+   								<div class="day">Saturday</div>
+   							</div> <!-- .forecast-header -->
+   							<div class="forecast-content">
+   								<div class="forecast-icon">
+   									<img src="images/icons/icon-13.svg" alt="" width=48>
+   								</div>
+   								<div class="degree">23<sup>o</sup>C</div>
+   								<small>18<sup>o</sup></small>
+   							</div>
+   						</div>
+   						<div class="forecast">
+   							<div class="forecast-header">
+   								<div class="day">Sunday</div>
+   							</div> <!-- .forecast-header -->
+   							<div class="forecast-content">
+   								<div class="forecast-icon">
+   									<img src="images/icons/icon-14.svg" alt="" width=48>
+   								</div>
+   								<div class="degree">23<sup>o</sup>C</div>
+   								<small>18<sup>o</sup></small>
+   							</div>
+   						</div>
+   					</div>
+   				</div>
+   			</div>
          <h1>{{title}}</h1>
          <p>{{description}}</p>
 
            <h1 class="cover-heading">Temperature: {{ temperature }} °F</h1>
-           <p class="lead">The site is under construction.</p>
+           <p class="lead"></p>
            <p class="lead"><em>{{ summary }}</em></p>
            <h5>{{ time }}</h5>
            <img src="images/{{icon}}.jpg" alt="{{icon}}" class="img-responsive">

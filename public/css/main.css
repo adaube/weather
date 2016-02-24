@@ -28,7 +28,7 @@ html,
 body {
   height: 100%;
   background-color: #333;
-  background: url(../images/nyc.jpg) no-repeat center center fixed;
+  /*background: url(../images/nyc.jpg) no-repeat center center fixed;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -115,6 +115,7 @@ body {
  */
 
 .cover {
+  background: rgba(51, 102, 51, 0.7);
   padding: 0 20px;
 }
 .cover .btn-lg {
@@ -128,7 +129,7 @@ body {
  */
 
 .mastfoot {
-  color: #999; /* IE8 proofing */
+  background: rgba(51, 102, 51, 0.7);
   color: rgba(255,255,255,.5);
 }
 
