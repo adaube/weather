@@ -49,16 +49,19 @@ $(document).ready(function(){
 
   };
 
-  function showInfoSuccess(hammer){
-    console.log(hammer);
+
+
+  function showInfoSuccess(weatherData){
+    console.log(weatherData);
     var source = $('#info').html();
     var template = Handlebars.compile(source);
-    var w = hammer.currently;
+    var wc = weatherData.currently;
+    var wd = weatherData.daily;
     var extractedData = {
-      temperature: w.temperature,
-      icon: w.icon,
-      summary: w.summary,
-      time: w.time,
+      temperature: wc.temperature,
+      icon: wc.icon,
+      summary: wd.summary,
+      time: moment().format("dddd, MMMM Do YYYY, h:mm:ss a"),
       btnLink: "javascript:history.go(0)",
       btnText: "Click to Reload",
     };

@@ -1,6 +1,7 @@
 var express = require('express'),
     logger  = require('morgan')('dev'),
     handlebars = require('handlebars');
+    moment = require('moment');
     server  = express();
 
 server.use(express.static(__dirname+'/public'));
