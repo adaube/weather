@@ -5,6 +5,11 @@ $(document).ready(function(){
   var baseUrl = 'https://api.forecast.io/forecast/';
   var locationUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
   $('#get-weather').on('click', google);
+  $("#go").keyup(function(e){
+    if(e.keyCode == 13){
+        $("#get-weather").click();
+    }
+  });
 
   function googleUrl(location){
     return locationUrl + location;
@@ -12,7 +17,7 @@ $(document).ready(function(){
   };
 
   function google(){
-    var location = $('#location').val();
+    var location = $('#go').val();
     console.log(location);
     var jsonGoogle = {
       url: googleUrl(location),
@@ -59,11 +64,12 @@ $(document).ready(function(){
     var wd = weatherData.daily;
     var extractedData = {
       temperature: wc.temperature,
-      icon: wc.icon,
+      // icon: wc.icon,
       summary: wd.summary,
-      time: moment().format("dddd, MMMM Do YYYY, h:mm:ss a"),
+      time: moment().format("h:mm a"),
+      todayDate: moment().format("dddd, MMMM Do"),
       btnLink: "javascript:history.go(0)",
-      btnText: "Click to Reload",
+      btnText: "Click to Reset App",
     };
     var html = template(extractedData);
     $('#test-output').html(html);

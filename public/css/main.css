@@ -23,11 +23,18 @@ a:hover {
 /*
  * Base structure
  */
-
+ body{
+   background: #404040;;
+   padding:0;
+   margin:0;
+   text-align: center;
+   font-family: arial;
+   color: #fff;
+ }
 html,
 body {
-  height: 100%;
-  background-color: #333;
+  /*height: 100%;
+  background-color: #333;*/
   /*background: url(../images/nyc.jpg) no-repeat center center fixed;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -35,7 +42,7 @@ body {
   background-size: cover;
 }
 body {
-  color: #fff;
+  /*color: #fff;*/
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
@@ -63,7 +70,6 @@ body {
   padding: 30px;
 }
 
-
 /*
  * Header
  */
@@ -72,7 +78,7 @@ body {
   margin-bottom: 10px;
 }
 
-.masthead-nav > li {
+/*.masthead-nav > li {
   display: inline-block;
 }
 .masthead-nav > li + li {
@@ -84,10 +90,10 @@ body {
   font-size: 16px;
   font-weight: bold;
   color: #fff; /* IE8 proofing */
-  color: rgba(255,255,255,.75);
+  /*color: rgba(255,255,255,.75);
   border-bottom: 2px solid transparent;
-}
-.masthead-nav > li > a:hover,
+}*/
+/*.masthead-nav > li > a:hover,
 .masthead-nav > li > a:focus {
   background-color: transparent;
   border-bottom-color: #a9a9a9;
@@ -98,7 +104,7 @@ body {
 .masthead-nav > .active > a:focus {
   color: #fff;
   border-bottom-color: #fff;
-}
+}*/
 
 @media (min-width: 768px) {
   .masthead-brand {
